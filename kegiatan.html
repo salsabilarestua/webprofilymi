@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kegiatan, Galeri & Prestasi Santri - Yayasan Mutiara Ilmu</title>
+  
+  <meta name="description" content="Dokumentasi kegiatan resmi ber-watermark, galeri foto per unit RA, DTA, dan Majelis Ta'lim, serta daftar prestasi santri Yayasan Mutiara Ilmu.">
+  <meta property="og:title" content="Kegiatan & Prestasi Santri - Yayasan Mutiara Ilmu">
+  <meta property="og:description" content="Dokumentasi kegiatan dan prestasi santri Yayasan Mutiara Ilmu.">
+  <meta property="og:image" content="assets/images/logo.svg">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              green: '#0B4D3C',
+              'green-dark': '#062F24',
+              'green-light': '#12634E',
+              'green-soft': '#F0FDF4',
+              gold: '#F59E0B',
+              'gold-hover': '#D97706',
+              'gold-light': '#FEF3C7',
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body class="bg-[#FAFCF9] text-[#1E293B] antialiased flex flex-col min-h-screen">
+
+<!-- MAIN NAVIGATION -->
+    <!-- TOP UTILITY BAR (SESUAI REFERENSI DESAIN - PRESISI, LURUS & RAPI) -->
+  <div class="top-utility-bar w-full bg-[#062F24] text-emerald-100 border-b border-emerald-900/80 m-0 p-0 block relative z-40 overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-10 flex justify-between items-center text-[11px] sm:text-xs">
+      
+      <!-- Contact Info (Aligns with Logo) -->
+      <div class="flex items-center gap-3 sm:gap-4 text-emerald-200">
+        <span class="inline-flex items-center gap-1.5">
+          <i data-lucide="map-pin" class="w-3.5 h-3.5 text-[#F59E0B] flex-shrink-0"></i>
+          <span>Cibiru, Kota Bandung</span>
+        </span>
+        <span class="w-px h-3.5 bg-emerald-800/80 hidden sm:inline-block"></span>
+        <span class="hidden sm:inline-flex items-center gap-1.5">
+          <i data-lucide="phone" class="w-3.5 h-3.5 text-[#F59E0B] flex-shrink-0"></i>
+          <span>+62 812-3456-7890</span>
+        </span>
+      </div>
+
+      <!-- Quick Status & Legalitas (Aligns with Nav Right) -->
+      <div class="flex items-center gap-3 sm:gap-4">
+        <div class="hidden sm:inline-flex items-center gap-2 text-emerald-200">
+          <span class="w-2 h-2 rounded-full bg-[#F59E0B] animate-pulse"></span>
+          <span class="font-medium tracking-wide">Legalitas Resmi Kemenkumham & Kemenag</span>
+        </div>
+        
+      </div>
+
+    </div>
+  </div>
+
+<header class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-emerald-100 shadow-sm transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-20">
+        
+        <a href="index.html" class="flex items-center gap-3 group">
+          <div class="w-12 h-12 flex-shrink-0 transition-transform duration-300 group-hover:scale-105 rounded-full overflow-hidden shadow-sm border border-emerald-200">
+            <img src="assets/images/Logo.jpg" alt="Logo Yayasan Pendidikan Islam Mutiara Ilmu Papakserang" class="w-full h-full object-cover">
+          </div>
+          <div>
+            <h1 class="font-extrabold text-base sm:text-lg text-[#0B4D3C] tracking-tight leading-none group-hover:text-emerald-700 transition">
+              YPI MUTIARA ILMU
+            </h1>
+            <p class="text-[10px] sm:text-[11px] font-bold text-[#F59E0B] tracking-wider uppercase mt-1">
+              Papakserang • Tarbiyatul Qur'an
+            </p>
+          </div>
+        </a>
+
+        <!-- Desktop Menu Links -->
+        <nav class="hidden md:flex items-center gap-1 lg:gap-2">
+          <a href="index.html" class="px-3.5 py-2 text-sm font-semibold text-slate-700 hover:text-[#0B4D3C] hover:bg-emerald-50/60 rounded-full transition">
+            Beranda
+          </a>
+          <a href="tentang.html" class="px-3.5 py-2 text-sm font-semibold text-slate-700 hover:text-[#0B4D3C] hover:bg-emerald-50/60 rounded-full transition">
+            Tentang Kami
+          </a>
+          <a href="pendidikan.html" class="px-3.5 py-2 text-sm font-semibold text-slate-700 hover:text-[#0B4D3C] hover:bg-emerald-50/60 rounded-full transition">
+            Pendidikan
+          </a>
+          <a href="kegiatan.html" class="px-3.5 py-2 text-sm font-bold text-[#0B4D3C] bg-emerald-50 rounded-full border border-emerald-200/60">
+            Kegiatan & Prestasi
+          </a>
+          <a href="donasi.html" class="px-3.5 py-2 text-sm font-semibold text-slate-700 hover:text-[#0B4D3C] hover:bg-emerald-50/60 rounded-full transition">
+            Alur Donasi
+          </a>
+        </nav>
+
+        <div class="hidden lg:flex items-center gap-3">
+          <a href="donasi.html" class="btn-direct-wa-donasi bg-[#F59E0B] hover:bg-[#D97706] text-slate-900 font-bold px-5 py-2.5 rounded-full text-sm shadow-md hover:shadow-lg transition-all duration-300 flex items-center gap-2">
+            <i data-lucide="heart-handshake" class="w-4 h-4 text-slate-900"></i>
+            <span>Salurkan Donasi</span>
+          </a>
+        </div>
+
+        <div class="flex md:hidden items-center">
+          <button id="mobile-menu-btn" class="p-2 rounded-lg text-[#0B4D3C] hover:bg-emerald-50 focus:outline-none" aria-label="Buka Menu Navigasi">
+            <i data-lucide="menu" class="w-6 h-6"></i>
+          </button>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Mobile Drawer Menu -->
+    <div id="mobile-menu" class="hidden fixed inset-0 z-50 bg-[#062F24]/60 backdrop-blur-sm md:hidden">
+      <div class="fixed inset-y-0 right-0 max-w-xs w-full bg-white shadow-2xl p-6 flex flex-col justify-between">
+        <div>
+          <div class="flex items-center justify-between pb-5 border-b border-slate-100">
+            <div class="flex items-center gap-2.5">
+              <img src="assets/images/Logo.jpg" alt="Logo" class="w-9 h-9 rounded-full object-cover border border-emerald-200">
+              <span class="font-extrabold text-sm text-[#0B4D3C]">MUTIARA ILMU</span>
+            </div>
+            <button id="mobile-menu-close" class="p-2 text-slate-400 hover:text-slate-600 rounded-lg">
+              <i data-lucide="x" class="w-5 h-5"></i>
+            </button>
+          </div>
+
+          <div class="mt-6 flex flex-col gap-2">
+            <a href="index.html" class="flex items-center gap-3 px-4 py-3 rounded-xl font-medium text-slate-700 hover:bg-slate-50">
+              <i data-lucide="home" class="w-4 h-4"></i> Beranda
+            </a>
+            <a href="tentang.html" class="flex items-center gap-3 px-4 py-3 rounded-xl font-medium text-slate-700 hover:bg-slate-50">
+              <i data-lucide="info" class="w-4 h-4"></i> Tentang Kami & Legalitas
+            </a>
+            <a href="pendidikan.html" class="flex items-center gap-3 px-4 py-3 rounded-xl font-medium text-slate-700 hover:bg-slate-50">
+              <i data-lucide="book-open" class="w-4 h-4"></i> Unit Pendidikan (RA, DTA, Majelis)
+            </a>
+            <a href="kegiatan.html" class="flex items-center gap-3 px-4 py-3 rounded-xl font-bold bg-emerald-50 text-[#0B4D3C]">
+              <i data-lucide="image" class="w-4 h-4"></i> Kegiatan & Prestasi
+            </a>
+            <a href="donasi.html" class="flex items-center gap-3 px-4 py-3 rounded-xl font-medium text-slate-700 hover:bg-slate-50">
+              <i data-lucide="gift" class="w-4 h-4"></i> Alur Donasi & WhatsApp
+            </a>
+          </div>
+        </div>
+
+        <div class="pt-6 border-t border-slate-100 flex flex-col gap-3">
+          <a href="donasi.html" class="w-full bg-[#F59E0B] text-slate-900 font-bold py-3 rounded-full text-center text-sm shadow flex items-center justify-center gap-2">
+            <i data-lucide="heart" class="w-4 h-4"></i> Salurkan Donasi
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- PAGE HEADER -->
+  <section class="bg-gradient-to-r from-[#062F24] via-[#0B4D3C] to-[#12634E] text-white py-14 lg:py-18 relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+      <span class="inline-block text-xs font-bold text-[#FBBF24] tracking-widest uppercase bg-white/10 px-3.5 py-1 rounded-full border border-white/20 mb-3">
+        Dokumentasi & Prestasi
+      </span>
+      <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight">
+        KEGIATAN & PRESTASI SANTRI
+      </h1>
+      <div class="w-20 h-1 bg-[#F59E0B] mx-auto mt-4 rounded-full"></div>
+      <p class="mt-3 text-emerald-100 text-sm sm:text-base max-w-2xl mx-auto">
+        Kumpulan rekam jejak aktivitas belajar, pembinaan, dan torehan prestasi santri Yayasan Mutiara Ilmu.
+      </p>
+    </div>
+  </section>
+
+  <!-- SECTION: GALERI DOKUMENTASI DENGAN FITUR FILTER (SKENARIO 2) -->
+  <section class="py-16 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto mb-10">
+        <h2 class="text-2xl sm:text-3xl font-extrabold text-[#0B4D3C] tracking-tight">
+          GALERI DOKUMENTASI KEGIATAN
+        </h2>
+        <p class="mt-2 text-slate-600 text-sm">
+          Semua foto dokumentasi dilengkapi tanda pengenal (*watermark*) resmi lembaga.
+        </p>
+
+        <!-- FILTER PILL BUTTONS (SKENARIO 2: FILTER BERDASARKAN UNIT RA, DTA, MAJELIS) -->
+        <div class="flex flex-wrap justify-center items-center gap-2 sm:gap-3 mt-6">
+          <button class="filter-btn px-5 py-2 rounded-full text-xs font-bold bg-[#0B4D3C] text-white shadow-md transition" data-filter="all">
+            Semua Unit
+          </button>
+          <button class="filter-btn px-5 py-2 rounded-full text-xs font-bold bg-white text-[#0B4D3C] border border-emerald-200 hover:bg-emerald-50 transition" data-filter="RA">
+            Unit RA (Raudhatul Athfal)
+          </button>
+          <button class="filter-btn px-5 py-2 rounded-full text-xs font-bold bg-white text-[#0B4D3C] border border-emerald-200 hover:bg-emerald-50 transition" data-filter="DTA">
+            Unit DTA (Madrasah Sore)
+          </button>
+          <button class="filter-btn px-5 py-2 rounded-full text-xs font-bold bg-white text-[#0B4D3C] border border-emerald-200 hover:bg-emerald-50 transition" data-filter="Majelis Ta'lim">
+            Majelis Ta'lim
+          </button>
+        </div>
+      </div>
+
+      <!-- GALLERY GRID (RASIO 4:3 ANTI-GEPENG DENGAN WATERMARK) -->
+      <div id="gallery-container" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        
+        <!-- Item 1: DTA -->
+        <div class="gallery-card-item bg-white rounded-2xl overflow-hidden border border-slate-200/80 shadow-sm card-hover flex flex-col justify-between" data-category="DTA">
+          <div class="relative w-full ratio-4-3 bg-slate-100 overflow-hidden cursor-pointer open-lightbox" data-src="assets/images/dta-kbm.jpg" data-title="Bimbingan Tahsin & Tahfidz Santri DTA">
+            <img 
+              src="assets/images/dta-kbm.jpg" 
+              alt="Tahsin DTA"
+              class="object-fit-safe transition duration-500 hover:scale-105"
+            >
+            <span class="absolute top-3 left-3 bg-[#0B4D3C] text-white text-[10px] font-bold px-2.5 py-1 rounded-full shadow">
+              Unit DTA
+            </span>
+            <!-- Watermark Resmi -->
+            <div class="watermark-badge">
+              <i data-lucide="shield-check" class="w-3 h-3 text-[#0B4D3C]"></i>
+              <span>Yayasan Mutiara Ilmu</span>
+            </div>
+          </div>
+          <div class="p-5">
+            <span class="text-[11px] text-slate-400 flex items-center gap-1.5 mb-1.5">
+              <i data-lucide="calendar" class="w-3.5 h-3.5"></i> 18 Oktober 2026
+            </span>
+            <h3 class="font-bold text-slate-900 text-sm leading-snug">Bimbingan Tahsin & Tahfidz Sore Santri DTA</h3>
+            <p class="text-xs text-slate-500 mt-2 line-clamp-2">Santri DTA mempraktikkan makharijul huruf dan menghafal surat pilihan di bawah bimbingan Ustadz Ridwan.</p>
+          </div>
+        </div>
+
+        <!-- Item 2: RA -->
+        <div class="gallery-card-item bg-white rounded-2xl overflow-hidden border border-slate-200/80 shadow-sm card-hover flex flex-col justify-between" data-category="RA">
+          <div class="relative w-full ratio-4-3 bg-slate-100 overflow-hidden cursor-pointer open-lightbox" data-src="assets/images/ra-kegiatan.jpg" data-title="Keceriaan Belajar Adab & Doa Santri RA">
+            <img 
+              src="assets/images/ra-kegiatan.jpg" 
+              alt="Kegiatan Belajar RA"
+              class="object-fit-safe transition duration-500 hover:scale-105"
+            >
+            <span class="absolute top-3 left-3 bg-[#D97706] text-white text-[10px] font-bold px-2.5 py-1 rounded-full shadow">
+              Unit RA
+            </span>
+            <!-- Watermark Resmi -->
+            <div class="watermark-badge">
+              <i data-lucide="shield-check" class="w-3 h-3 text-[#0B4D3C]"></i>
+              <span>Yayasan Mutiara Ilmu</span>
+            </div>
+          </div>
+          <div class="p-5">
+            <span class="text-[11px] text-slate-400 flex items-center gap-1.5 mb-1.5">
+              <i data-lucide="calendar" class="w-3.5 h-3.5"></i> 14 Oktober 2026
+            </span>
+            <h3 class="font-bold text-slate-900 text-sm leading-snug">Keceriaan Belajar Adab & Doa Santri RA Mutiara Ilmu</h3>
+            <p class="text-xs text-slate-500 mt-2 line-clamp-2">Pendidikan fitrah anak usia dini melalui cerita sirah nabawiyah dan hafalan doa harian.</p>
+          </div>
+        </div>
+
+        <!-- Item 3: Majelis Ta'lim -->
+        <div class="gallery-card-item bg-white rounded-2xl overflow-hidden border border-slate-200/80 shadow-sm card-hover flex flex-col justify-between" data-category="Majelis Ta'lim">
+          <div class="relative w-full ratio-4-3 bg-slate-100 overflow-hidden cursor-pointer open-lightbox" data-src="assets/images/majlis-talim.jpg" data-title="Kajian Fiqih Keluarga Majelis Ta'lim">
+            <img 
+              src="assets/images/majlis-talim.jpg" 
+              alt="Kajian Majelis"
+              class="object-fit-safe transition duration-500 hover:scale-105"
+            >
+            <span class="absolute top-3 left-3 bg-emerald-800 text-white text-[10px] font-bold px-2.5 py-1 rounded-full shadow">
+              Majelis Ta'lim
+            </span>
+            <!-- Watermark Resmi -->
+            <div class="watermark-badge">
+              <i data-lucide="shield-check" class="w-3 h-3 text-[#0B4D3C]"></i>
+              <span>Yayasan Mutiara Ilmu</span>
+            </div>
+          </div>
+          <div class="p-5">
+            <span class="text-[11px] text-slate-400 flex items-center gap-1.5 mb-1.5">
+              <i data-lucide="calendar" class="w-3.5 h-3.5"></i> 05 Oktober 2026
+            </span>
+            <h3 class="font-bold text-slate-900 text-sm leading-snug">Kajian Ahad Pagi: Meneladani Keluarga Rasulullah SAW</h3>
+            <p class="text-xs text-slate-500 mt-2 line-clamp-2">Silaturahmi jamaah dan pembekalan fiqih muamalah rumah tangga bersama Ustadz Luqman Hakim, Lc.</p>
+          </div>
+        </div>
+
+        <!-- Item 4: RA -->
+        <div class="gallery-card-item bg-white rounded-2xl overflow-hidden border border-slate-200/80 shadow-sm card-hover flex flex-col justify-between" data-category="RA">
+          <div class="relative w-full ratio-4-3 bg-slate-100 overflow-hidden cursor-pointer open-lightbox" data-src="assets/images/ra-shalat.jpg" data-title="Kreativitas Mewarnai Kaligrafi RA">
+            <img 
+              src="assets/images/ra-shalat.jpg" 
+              alt="Mewarnai RA"
+              class="object-fit-safe transition duration-500 hover:scale-105"
+            >
+            <span class="absolute top-3 left-3 bg-[#D97706] text-white text-[10px] font-bold px-2.5 py-1 rounded-full shadow">
+              Unit RA
+            </span>
+            <div class="watermark-badge">
+              <i data-lucide="shield-check" class="w-3 h-3 text-[#0B4D3C]"></i>
+              <span>Yayasan Mutiara Ilmu</span>
+            </div>
+          </div>
+          <div class="p-5">
+            <span class="text-[11px] text-slate-400 flex items-center gap-1.5 mb-1.5">
+              <i data-lucide="calendar" class="w-3.5 h-3.5"></i> 28 September 2026
+            </span>
+            <h3 class="font-bold text-slate-900 text-sm leading-snug">Lomba Mewarnai Kaligrafi Huruf Hijaiyah Santri RA</h3>
+            <p class="text-xs text-slate-500 mt-2 line-clamp-2">Melatih motorik halus dan mengenalkan keindahan aksara Al-Qur'an sejak usia dini.</p>
+          </div>
+        </div>
+
+        <!-- Item 5: DTA -->
+        <div class="gallery-card-item bg-white rounded-2xl overflow-hidden border border-slate-200/80 shadow-sm card-hover flex flex-col justify-between" data-category="DTA">
+          <div class="relative w-full ratio-4-3 bg-slate-100 overflow-hidden cursor-pointer open-lightbox" data-src="assets/images/hero-khataman.jpg" data-title="Simulasi Ujian Munaqosyah DTA">
+            <img 
+              src="assets/images/hero-khataman.jpg" 
+              alt="Ujian DTA"
+              class="object-fit-safe transition duration-500 hover:scale-105"
+            >
+            <span class="absolute top-3 left-3 bg-[#0B4D3C] text-white text-[10px] font-bold px-2.5 py-1 rounded-full shadow">
+              Unit DTA
+            </span>
+            <div class="watermark-badge">
+              <i data-lucide="shield-check" class="w-3 h-3 text-[#0B4D3C]"></i>
+              <span>Yayasan Mutiara Ilmu</span>
+            </div>
+          </div>
+          <div class="p-5">
+            <span class="text-[11px] text-slate-400 flex items-center gap-1.5 mb-1.5">
+              <i data-lucide="calendar" class="w-3.5 h-3.5"></i> 20 September 2026
+            </span>
+            <h3 class="font-bold text-slate-900 text-sm leading-snug">Simulasi Ujian Munaqosyah Fiqih & Hafalan Santri DTA</h3>
+            <p class="text-xs text-slate-500 mt-2 line-clamp-2">Persiapan kelulusan santri tingkat akhir madrasah diniyah untuk memperoleh ijazah resmi Kemenag.</p>
+          </div>
+        </div>
+
+        <!-- Item 6: Majelis Ta'lim -->
+        <div class="gallery-card-item bg-white rounded-2xl overflow-hidden border border-slate-200/80 shadow-sm card-hover flex flex-col justify-between" data-category="Majelis Ta'lim">
+          <div class="relative w-full ratio-4-3 bg-slate-100 overflow-hidden cursor-pointer open-lightbox" data-src="assets/images/santunan-yatim.jpg" data-title="Penyaluran Santunan Yatim & Dhuafa">
+            <img 
+              src="assets/images/santunan-yatim.jpg" 
+              alt="Santunan Majelis"
+              class="object-fit-safe transition duration-500 hover:scale-105"
+            >
+            <span class="absolute top-3 left-3 bg-emerald-800 text-white text-[10px] font-bold px-2.5 py-1 rounded-full shadow">
+              Majelis Ta'lim
+            </span>
+            <div class="watermark-badge">
+              <i data-lucide="shield-check" class="w-3 h-3 text-[#0B4D3C]"></i>
+              <span>Yayasan Mutiara Ilmu</span>
+            </div>
+          </div>
+          <div class="p-5">
+            <span class="text-[11px] text-slate-400 flex items-center gap-1.5 mb-1.5">
+              <i data-lucide="calendar" class="w-3.5 h-3.5"></i> 10 September 2026
+            </span>
+            <h3 class="font-bold text-slate-900 text-sm leading-snug">Bakti Sosial & Santunan 50 Santri Yatim & Dhuafa</h3>
+            <p class="text-xs text-slate-500 mt-2 line-clamp-2">Penyaluran amanah infaq dan shodaqoh para donatur kepada keluarga binaan di sekitar yayasan.</p>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SECTION: DAFTAR PRESTASI SANTRI (SKENARIO 2) -->
+  <section id="prestasi" class="py-20 bg-[#F4F8F5] border-t border-emerald-100">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto mb-14">
+        <span class="text-xs font-bold text-[#F59E0B] tracking-widest uppercase bg-amber-50 px-3 py-1 rounded-full border border-amber-200">
+          Capaian Santri
+        </span>
+        <h2 class="text-3xl font-extrabold text-[#0B4D3C] mt-3 tracking-tight">
+          PRESTASI & CAPAIAN SANTRI
+        </h2>
+        <div class="w-20 h-1 bg-[#F59E0B] mx-auto mt-3 rounded-full"></div>
+        <p class="mt-4 text-slate-600 text-sm sm:text-base leading-relaxed">
+          Bukti nyata dedikasi asatidz dan ketekunan para santri Mutiara Ilmu dalam mengukir prestasi di tingkat kota maupun provinsi.
+        </p>
+      </div>
+
+      <!-- Prestasi Grid Cards -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        
+        <!-- Prestasi 1 -->
+        <div class="bg-white p-6 rounded-2xl border border-emerald-100 shadow-sm flex items-start gap-4 card-hover">
+          <div class="w-14 h-14 rounded-2xl bg-amber-100 text-[#D97706] flex items-center justify-center flex-shrink-0 font-bold text-xl shadow-xs">
+            <i data-lucide="trophy" class="w-7 h-7"></i>
+          </div>
+          <div>
+            <span class="text-[10px] font-bold text-[#0B4D3C] bg-emerald-50 px-2 py-0.5 rounded-full border border-emerald-200">
+              Tingkat Kota Bandung (2026)
+            </span>
+            <h4 class="font-bold text-slate-900 text-sm mt-1.5 leading-snug">Juara 1 Musabaqah Hifdzil Qur'an (MHQ) 1 Juz</h4>
+            <p class="text-xs text-slate-600 mt-1">Diraih oleh: <strong>Ahmad Zaki Al-Faruq (Santri DTA)</strong></p>
+            <p class="text-[11px] text-slate-400 mt-2">Penyelenggara: Forum Komunikasi Diniyah Takmiliyah (FKDT)</p>
+          </div>
+        </div>
+
+        <!-- Prestasi 2 -->
+        <div class="bg-white p-6 rounded-2xl border border-emerald-100 shadow-sm flex items-start gap-4 card-hover">
+          <div class="w-14 h-14 rounded-2xl bg-amber-100 text-[#D97706] flex items-center justify-center flex-shrink-0 font-bold text-xl shadow-xs">
+            <i data-lucide="medal" class="w-7 h-7"></i>
+          </div>
+          <div>
+            <span class="text-[10px] font-bold text-[#D97706] bg-amber-50 px-2 py-0.5 rounded-full border border-amber-200">
+              Tingkat Kecamatan Cibiru (2026)
+            </span>
+            <h4 class="font-bold text-slate-900 text-sm mt-1.5 leading-snug">Juara 1 Lomba Hafalan Surat Pendek & Doa</h4>
+            <p class="text-xs text-slate-600 mt-1">Diraih oleh: <strong>Fathimah Az-Zahra (Santri RA)</strong></p>
+            <p class="text-[11px] text-slate-400 mt-2">Penyelenggara: Ikatan Guru Raudhatul Athfal (IGRA)</p>
+          </div>
+        </div>
+
+        <!-- Prestasi 3 -->
+        <div class="bg-white p-6 rounded-2xl border border-emerald-100 shadow-sm flex items-start gap-4 card-hover">
+          <div class="w-14 h-14 rounded-2xl bg-amber-100 text-[#D97706] flex items-center justify-center flex-shrink-0 font-bold text-xl shadow-xs">
+            <i data-lucide="award" class="w-7 h-7"></i>
+          </div>
+          <div>
+            <span class="text-[10px] font-bold text-[#0B4D3C] bg-emerald-50 px-2 py-0.5 rounded-full border border-emerald-200">
+              Tingkat Kota Bandung (2025)
+            </span>
+            <h4 class="font-bold text-slate-900 text-sm mt-1.5 leading-snug">Juara 2 Lomba Seni Kaligrafi Naskhi</h4>
+            <p class="text-xs text-slate-600 mt-1">Diraih oleh: <strong>Muhammad Raihan (Santri DTA)</strong></p>
+            <p class="text-[11px] text-slate-400 mt-2">Penyelenggara: Pekan Keterampilan & Seni Pendidikan Islam</p>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- LIGHTBOX MODAL POPUP -->
+  <div id="lightbox-modal" class="lightbox-modal">
+    <div class="relative max-w-4xl w-full mx-auto p-4 flex flex-col items-center">
+      <button id="lightbox-close" class="absolute -top-10 right-2 text-white hover:text-[#FBBF24] p-2 text-2xl font-bold">
+        <i data-lucide="x" class="w-8 h-8"></i>
+      </button>
+      <div class="relative rounded-2xl overflow-hidden shadow-2xl border-2 border-white/20 bg-black/60 max-h-[80vh]">
+        <img id="lightbox-img" src="" alt="Dokumentasi" class="max-h-[75vh] w-auto object-contain">
+        <div class="watermark-badge bottom-4 right-4">
+          <i data-lucide="shield-check" class="w-3.5 h-3.5 text-[#0B4D3C]"></i>
+          <span>Yayasan Mutiara Ilmu</span>
+        </div>
+      </div>
+      <p id="lightbox-title" class="text-white text-sm font-bold mt-4 text-center bg-black/40 px-4 py-1.5 rounded-full backdrop-blur-sm"></p>
+    </div>
+  </div>
+
+  <!-- COMPREHENSIVE FOOTER -->
+  <footer class="bg-[#073529] text-emerald-100 border-t border-emerald-900/80 pt-16 pb-8">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 mb-12">
+        <div class="lg:col-span-2 space-y-4">
+          <div class="flex items-center gap-3">
+            <img src="assets/images/Logo.jpg" alt="Logo Yayasan Mutiara Ilmu" class="w-12 h-12 rounded-full object-cover border-2 border-emerald-600">
+            <div>
+              <h3 class="font-extrabold text-base text-white tracking-tight">YPI MUTIARA ILMU</h3>
+              <p class="text-xs font-semibold text-[#FBBF24]">Papakserang • Tarbiyatul Qur'an</p>
+            </div>
+          </div>
+          <p class="text-xs text-emerald-200/80 leading-relaxed max-w-sm">
+            Membangun generasi islami yang berakhlak mulia, berwawasan luas, dan istiqomah dalam mengamalkan ajaran Al-Qur'an dan Sunnah.
+          </p>
+          <div class="pt-2 text-xs text-emerald-300 space-y-1">
+            <p><strong>SK Kemenkumham:</strong> AHU-0012345.AH.01.04.Tahun 2020</p>
+            <p><strong>Izin Operasional:</strong> 421.1/098/Kemenag-DTA/2021</p>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="font-bold text-sm text-white mb-4 uppercase tracking-wider text-[#FBBF24]">Tautan Menu</h4>
+          <ul class="space-y-2.5 text-xs text-emerald-200">
+            <li><a href="index.html" class="hover:text-white transition">Beranda</a></li>
+            <li><a href="tentang.html" class="hover:text-white transition">Tentang Kami</a></li>
+            <li><a href="tentang.html#legalitas" class="hover:text-white transition">Legalitas Lembaga</a></li>
+            <li><a href="tentang.html#struktur" class="hover:text-white transition">Struktur Organisasi</a></li>
+            <li><a href="pendidikan.html" class="hover:text-white transition">Unit Pendidikan</a></li>
+            <li><a href="kegiatan.html" class="hover:text-white transition font-bold text-white">Kegiatan & Prestasi</a></li>
+            <li><a href="donasi.html" class="hover:text-white transition">Alur Donasi</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="font-bold text-sm text-white mb-4 uppercase tracking-wider text-[#FBBF24]">Unit Lembaga</h4>
+          <ul class="space-y-2.5 text-xs text-emerald-200">
+            <li><a href="pendidikan.html#unit-ra" class="hover:text-white transition">RA (Raudhatul Athfal)</a></li>
+            <li><a href="pendidikan.html#unit-dta" class="hover:text-white transition">DTA (Madrasah Diniyah)</a></li>
+            <li><a href="pendidikan.html#unit-majelis" class="hover:text-white transition">Majelis Ta'lim Mutiara Hati</a></li>
+            <li><a href="kegiatan.html#prestasi" class="hover:text-white transition">Prestasi Santri</a></li>
+            </ul>
+        </div>
+
+        <div>
+          <h4 class="font-bold text-sm text-white mb-4 uppercase tracking-wider text-[#FBBF24]">Kontak Kantor</h4>
+          <ul class="space-y-3 text-xs text-emerald-200">
+            <li class="flex items-start gap-2.5">
+              <i data-lucide="map-pin" class="w-4 h-4 text-[#FBBF24] flex-shrink-0 mt-0.5"></i>
+              <span>Jl. Pendidikan Islami No. 123, Cibiru, Kota Bandung, Jawa Barat 40614</span>
+            </li>
+            <li class="flex items-center gap-2.5">
+              <i data-lucide="phone" class="w-4 h-4 text-[#FBBF24] flex-shrink-0"></i>
+              <span>+62 812-3456-7890</span>
+            </li>
+            <li class="flex items-center gap-2.5">
+              <i data-lucide="mail" class="w-4 h-4 text-[#FBBF24] flex-shrink-0"></i>
+              <span>info@yayasanmutiarailmu.or.id</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="border-t border-emerald-900/60 pt-6 flex flex-col sm:flex-row items-center justify-between text-xs text-emerald-400 gap-3">
+        <p id="footer-copyright" class="cursor-default select-none" title="Yayasan Mutiara Ilmu Papakserang">&copy; 2026 Yayasan Mutiara Ilmu. Hak Cipta Dilindungi Undang-Undang.</p>
+        <p class="flex items-center gap-1 text-[11px] text-emerald-500">
+          Dirancang untuk kemaslahatan pendidikan ummat & santri
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- FLOATING WHATSAPP BUTTON -->
+  <a href="#" class="floating-wa-btn btn-direct-wa-donasi shadow-2xl" title="Hubungi Kami via WhatsApp">
+    <i data-lucide="message-circle" class="w-5 h-5 text-white"></i>
+    <span class="hidden sm:inline">Hubungi WhatsApp</span>
+  </a>
+
+  <!-- SCRIPTS -->
+  <script src="assets/js/main.js"></script>
+  <script>
+    lucide.createIcons();
+  </script>
+</body>
+</html>

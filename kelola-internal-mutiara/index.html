@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard Pengurus - Yayasan Mutiara Ilmu</title>
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              green: '#0B4D3C',
+              'green-dark': '#062F24',
+              gold: '#F59E0B',
+              'gold-hover': '#D97706',
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body class="bg-slate-50 text-[#1E293B] antialiased min-h-screen flex flex-col">
+
+  <!-- TOP DASHBOARD HEADER -->
+  <header class="bg-[#0B4D3C] text-white sticky top-0 z-50 border-b border-emerald-900 shadow-md">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-16">
+        
+        <div class="flex items-center gap-3">
+          <img src="../assets/images/Logo.jpg" alt="Logo" class="w-10 h-10 rounded-full object-cover border border-emerald-400">
+          <div>
+            <h1 class="font-bold text-sm sm:text-base leading-none">PANEL PENGURUS</h1>
+            <p class="text-[10px] text-[#FBBF24] font-semibold tracking-wider uppercase mt-0.5">YPI Mutiara Ilmu Papakserang</p>
+          </div>
+        </div>
+
+        <div class="flex items-center gap-3">
+          <a href="../index.html" target="_blank" class="hidden sm:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white/10 hover:bg-white/20 text-xs text-emerald-100 transition border border-white/20">
+            <i data-lucide="external-link" class="w-3.5 h-3.5 text-[#FBBF24]"></i>
+            <span>Lihat Website Utama</span>
+          </a>
+
+          <div class="h-6 w-px bg-emerald-800 hidden sm:block"></div>
+
+          <div class="flex items-center gap-2">
+            <span class="w-8 h-8 rounded-full bg-emerald-800 border border-emerald-600 flex items-center justify-center font-bold text-xs text-emerald-200">
+              MI
+            </span>
+            <span class="text-xs font-semibold hidden md:inline">Admin Pengurus</span>
+          </div>
+
+          <button id="admin-logout-btn" class="p-2 text-emerald-200 hover:text-white rounded-lg hover:bg-emerald-800 transition" title="Keluar">
+            <i data-lucide="log-out" class="w-4 h-4"></i>
+          </button>
+        </div>
+
+      </div>
+    </div>
+  </header>
+
+  <!-- DASHBOARD WRAPPER -->
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 flex-1 w-full grid grid-cols-1 lg:grid-cols-12 gap-8">
+    
+    <!-- LEFT SIDEBAR NAVIGATION -->
+    <aside class="lg:col-span-3 space-y-4">
+      <div class="bg-white rounded-2xl p-4 shadow-sm border border-slate-200">
+        <p class="text-[11px] font-bold uppercase tracking-wider text-slate-400 px-3 mb-2">Menu Kelola Konten</p>
+        <nav class="space-y-1">
+          <a href="#" class="admin-nav-item flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-xs font-bold bg-[#0B4D3C] text-white transition" data-tab="overview">
+            <i data-lucide="layout-dashboard" class="w-4 h-4"></i> Ringkasan & Statistik
+          </a>
+          <a href="#" class="admin-nav-item flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-xs font-semibold text-slate-600 hover:bg-slate-100 transition" data-tab="stories">
+            <i data-lucide="newspaper" class="w-4 h-4"></i> Cerita Santri & Berita
+          </a>
+          <a href="#" class="admin-nav-item flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-xs font-semibold text-slate-600 hover:bg-slate-100 transition" data-tab="gallery">
+            <i data-lucide="image" class="w-4 h-4"></i> Galeri Dokumentasi
+          </a>
+          <a href="#" class="admin-nav-item flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-xs font-semibold text-slate-600 hover:bg-slate-100 transition" data-tab="ratio-guide">
+            <i data-lucide="aspect-ratio" class="w-4 h-4 text-[#F59E0B]"></i> Panduan Rasio Foto
+          </a>
+          <a href="#" class="admin-nav-item flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-xs font-semibold text-slate-600 hover:bg-slate-100 transition" data-tab="settings">
+            <i data-lucide="settings" class="w-4 h-4"></i> Kontak & Rekening
+          </a>
+        </nav>
+      </div>
+
+      <!-- Quick Tips Box -->
+      <div class="bg-emerald-50 rounded-2xl p-4 border border-emerald-200/80 text-xs text-[#0B4D3C] space-y-2">
+        <p class="font-bold flex items-center gap-1.5">
+          <i data-lucide="shield-check" class="w-4 h-4 text-[#F59E0B]"></i> Fitur Anti-Gepeng Aktif
+        </p>
+        <p class="text-[11px] text-slate-600 leading-relaxed">
+          Semua foto yang Anda upload otomatis diposisikan secara proporsional di tengah bingkai rasio tanpa merusak tampilan.
+        </p>
+      </div>
+    </aside>
+
+    <!-- MAIN CONTENT AREA -->
+    <main class="lg:col-span-9 space-y-6">
+      
+      <!-- TAB 1: OVERVIEW / RINGKASAN -->
+      <section id="tab-overview" class="admin-tab-pane space-y-6">
+        
+        <!-- Welcome Banner -->
+        <div class="bg-gradient-to-r from-[#0B4D3C] to-[#12634E] text-white p-6 sm:p-8 rounded-3xl shadow-sm flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
+          <div>
+            <span class="inline-block px-2.5 py-0.5 rounded-full bg-white/10 text-[#FBBF24] text-[11px] font-bold mb-2">
+              Status Sistem: Online & Siap Publikasi
+            </span>
+            <h2 class="text-xl sm:text-2xl font-bold">Selamat Datang di Panel Pengurus</h2>
+            <p class="text-emerald-100 text-xs mt-1">Kelola publikasi cerita santri, foto kegiatan, dan informasi legalitas Yayasan Mutiara Ilmu.</p>
+          </div>
+          <a href="../index.html" target="_blank" class="px-5 py-2.5 rounded-full bg-[#F59E0B] hover:bg-[#D97706] text-slate-900 font-bold text-xs shadow transition flex items-center gap-1.5">
+            <span>Buka Web Publik</span>
+            <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
+          </a>
+        </div>
+
+        <!-- Stat Cards -->
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+          <div class="bg-white p-5 rounded-2xl border border-slate-200 shadow-xs flex items-center gap-4">
+            <div class="w-12 h-12 rounded-xl bg-emerald-50 text-[#0B4D3C] flex items-center justify-center font-bold">
+              <i data-lucide="newspaper" class="w-6 h-6"></i>
+            </div>
+            <div>
+              <p class="text-xs text-slate-400 font-medium">Cerita Santri Aktif</p>
+              <h3 id="stat-stories-count" class="text-2xl font-extrabold text-[#0B4D3C]">0</h3>
+            </div>
+          </div>
+
+          <div class="bg-white p-5 rounded-2xl border border-slate-200 shadow-xs flex items-center gap-4">
+            <div class="w-12 h-12 rounded-xl bg-amber-50 text-[#D97706] flex items-center justify-center font-bold">
+              <i data-lucide="image" class="w-6 h-6"></i>
+            </div>
+            <div>
+              <p class="text-xs text-slate-400 font-medium">Foto Galeri Dokumentasi</p>
+              <h3 id="stat-gallery-count" class="text-2xl font-extrabold text-[#D97706]">0</h3>
+            </div>
+          </div>
+
+          <div class="bg-white p-5 rounded-2xl border border-slate-200 shadow-xs flex items-center gap-4">
+            <div class="w-12 h-12 rounded-xl bg-emerald-50 text-[#0B4D3C] flex items-center justify-center font-bold">
+              <i data-lucide="shield-check" class="w-6 h-6"></i>
+            </div>
+            <div>
+              <p class="text-xs text-slate-400 font-medium">Legalitas Resmi</p>
+              <h3 class="text-sm font-bold text-[#0B4D3C] mt-1">Kemenkumham & Kemenag</h3>
+            </div>
+          </div>
+        </div>
+
+        <!-- Quick Activity Tips -->
+        <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-xs">
+          <h3 class="font-bold text-sm text-slate-800 mb-3 flex items-center gap-2">
+            <i data-lucide="check-circle-2" class="w-4 h-4 text-[#0B4D3C]"></i>
+            Langkah Cepat Memperbarui Konten:
+          </h3>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs text-slate-600">
+            <div class="p-3 bg-slate-50 rounded-xl border border-slate-100">
+              <p class="font-bold text-[#0B4D3C] mb-1">1. Tulis Cerita Santri Baru</p>
+              <p>Buka tab <strong>Cerita Santri & Berita</strong>, isi judul dan cerita prestasi santri, lampirkan foto kegiatan posisi horizontal (4:3), lalu klik terbitkan.</p>
+            </div>
+            <div class="p-3 bg-slate-50 rounded-xl border border-slate-100">
+              <p class="font-bold text-[#0B4D3C] mb-1">2. Tambah Dokumentasi Galeri</p>
+              <p>Buka tab <strong>Galeri Dokumentasi</strong>, pilih kategori unit (RA, DTA, atau Majelis), masukkan foto kegiatan ber-watermark otomatis.</p>
+            </div>
+          </div>
+        </div>
+
+      </section>
+
+      <!-- TAB 2: CERITA SANTRI & BERITA -->
+      <section id="tab-stories" class="admin-tab-pane hidden space-y-6">
+        
+        <!-- Form Tambah Cerita -->
+        <div class="bg-white p-6 sm:p-8 rounded-3xl border border-slate-200 shadow-xs">
+          <div class="flex items-center justify-between mb-6 pb-4 border-b border-slate-100">
+            <div>
+              <h3 class="font-bold text-base text-[#0B4D3C]">Tambah Cerita Santri / Berita Baru</h3>
+              <p class="text-xs text-slate-500 mt-0.5">Konten yang disimpan akan otomatis muncul di halaman Beranda dan Kegiatan.</p>
+            </div>
+            <span class="text-xs font-semibold text-emerald-800 bg-emerald-50 px-3 py-1 rounded-full border border-emerald-200">
+              Rasio Foto: 4:3 Pas
+            </span>
+          </div>
+
+          <form id="add-story-form" class="space-y-4">
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div>
+                <label class="block text-xs font-bold text-slate-700 mb-1">Judul Cerita / Berita *</label>
+                <input type="text" id="story-title" class="w-full px-3.5 py-2.5 rounded-xl border border-slate-200 text-xs focus:ring-2 focus:ring-[#0B4D3C] outline-none" placeholder="Contoh: Santri RA Raih Juara Tahfidz Cilik" required>
+              </div>
+
+              <div>
+                <label class="block text-xs font-bold text-slate-700 mb-1">Pilih Unit Lembaga *</label>
+                <select id="story-category" class="w-full px-3.5 py-2.5 rounded-xl border border-slate-200 text-xs focus:ring-2 focus:ring-[#0B4D3C] outline-none bg-white">
+                  <option value="DTA">Unit DTA (Madrasah Diniyah Sore)</option>
+                  <option value="RA">Unit RA (Raudhatul Athfal)</option>
+                  <option value="Majelis Ta'lim">Majelis Ta'lim Mutiara Hati</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div>
+                <label class="block text-xs font-bold text-slate-700 mb-1">Nama Penulis / Ustadz Pembimbing</label>
+                <input type="text" id="story-author" class="w-full px-3.5 py-2.5 rounded-xl border border-slate-200 text-xs focus:ring-2 focus:ring-[#0B4D3C] outline-none" placeholder="Ustadz Ridwan, S.Pd.I">
+              </div>
+
+              <div>
+                <label class="block text-xs font-bold text-slate-700 mb-1">Link URL Foto (Opsional jika tidak upload)</label>
+                <input type="url" id="story-image-url" class="w-full px-3.5 py-2.5 rounded-xl border border-slate-200 text-xs focus:ring-2 focus:ring-[#0B4D3C] outline-none" placeholder="https://contoh.com/foto.jpg">
+              </div>
+            </div>
+
+            <!-- Upload Foto File dengan Petunjuk Rasio Aspek -->
+            <div class="p-4 rounded-2xl bg-slate-50 border border-slate-200/80 space-y-3">
+              <label class="block text-xs font-bold text-slate-700">
+                Unggah File Foto Kegiatan Santri:
+              </label>
+              
+              <div class="flex flex-col sm:flex-row items-start sm:items-center gap-3">
+                <input type="file" id="story-image-input" accept="image/*" class="text-xs text-slate-600 file:mr-3 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-xs file:font-bold file:bg-[#0B4D3C] file:text-white hover:file:bg-[#062F24] cursor-pointer">
+              </div>
+
+              <!-- Petunjuk Rasio Sederhana Sesuai Keinginan User -->
+              <div class="flex items-center gap-2 text-[11px] text-emerald-800 bg-emerald-50/80 p-2.5 rounded-xl border border-emerald-100">
+                <i data-lucide="info" class="w-4 h-4 text-[#F59E0B] flex-shrink-0"></i>
+                <span><strong>Petunjuk Ukuran:</strong> Gunakan foto <strong>Landscape (Rasio 4:3)</strong> seperti posisi kamera HP tidur/horizontal biasa. Foto otomatis diposisikan presisi dan anti-gepeng.</span>
+              </div>
+
+              <!-- Live Preview Box -->
+              <div id="story-preview-container" class="hidden pt-2">
+                <p class="text-[11px] font-bold text-slate-500 mb-1.5">Pratinjau Hasil Foto (Rasio 4:3 Pas):</p>
+                <div class="relative w-48 aspect-[4/3] rounded-xl overflow-hidden border-2 border-emerald-300 shadow bg-slate-100">
+                  <img id="story-image-preview" src="" alt="Preview" class="w-full h-full object-cover">
+                  <div class="watermark-badge text-[9px] py-0.5 px-1.5 bottom-1.5 right-1.5">
+                    <span>Yayasan Mutiara Ilmu</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div>
+              <label class="block text-xs font-bold text-slate-700 mb-1">Isi Cerita Santri / Narasi Berita *</label>
+              <textarea id="story-summary" rows="4" class="w-full px-3.5 py-2.5 rounded-xl border border-slate-200 text-xs focus:ring-2 focus:ring-[#0B4D3C] outline-none" placeholder="Tuliskan cerita inspiratif santri atau rangkuman jalannya kegiatan di sini..." required></textarea>
+            </div>
+
+            <button type="submit" class="px-6 py-3 rounded-full bg-[#F59E0B] hover:bg-[#D97706] text-slate-900 font-bold text-xs shadow transition flex items-center gap-2">
+              <i data-lucide="send" class="w-4 h-4"></i>
+              <span>Simpan & Terbitkan Cerita Santri</span>
+            </button>
+          </form>
+        </div>
+
+        <!-- Tabel Cerita Terbit -->
+        <div class="bg-white rounded-3xl border border-slate-200 shadow-xs overflow-hidden">
+          <div class="p-6 border-b border-slate-100 flex justify-between items-center">
+            <h3 class="font-bold text-sm text-[#0B4D3C]">Daftar Cerita & Berita Aktif</h3>
+            <span class="text-xs text-slate-400">Total terbit di web</span>
+          </div>
+
+          <div class="overflow-x-auto">
+            <table class="w-full text-left">
+              <thead class="bg-slate-50 border-b border-slate-100 text-[11px] font-bold text-slate-500 uppercase">
+                <tr>
+                  <th class="py-3 px-4">No</th>
+                  <th class="py-3 px-4">Judul Cerita</th>
+                  <th class="py-3 px-4">Unit</th>
+                  <th class="py-3 px-4">Tanggal</th>
+                  <th class="py-3 px-4 text-right">Aksi</th>
+                </tr>
+              </thead>
+              <tbody id="stories-table-body">
+                <!-- Dynamic via admin.js -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+      </section>
+
+      <!-- TAB 3: GALERI FOTO KEGIATAN -->
+      <section id="tab-gallery" class="admin-tab-pane hidden space-y-6">
+        
+        <div class="bg-white p-6 sm:p-8 rounded-3xl border border-slate-200 shadow-xs">
+          <div class="flex items-center justify-between mb-6 pb-4 border-b border-slate-100">
+            <div>
+              <h3 class="font-bold text-base text-[#0B4D3C]">Unggah Foto Dokumentasi Galeri</h3>
+              <p class="text-xs text-slate-500 mt-0.5">Foto akan otomatis mendapatkan watermark resmi yayasan.</p>
+            </div>
+            <span class="text-xs font-semibold text-emerald-800 bg-emerald-50 px-3 py-1 rounded-full border border-emerald-200">
+              Rasio Foto: 4:3 Pas
+            </span>
+          </div>
+
+          <form id="add-gallery-form" class="space-y-4">
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div>
+                <label class="block text-xs font-bold text-slate-700 mb-1">Judul / Caption Kegiatan *</label>
+                <input type="text" id="gallery-title" class="w-full px-3.5 py-2.5 rounded-xl border border-slate-200 text-xs focus:ring-2 focus:ring-[#0B4D3C] outline-none" placeholder="Contoh: Praktik Wudhu Santri DTA" required>
+              </div>
+
+              <div>
+                <label class="block text-xs font-bold text-slate-700 mb-1">Kategori Unit *</label>
+                <select id="gallery-category" class="w-full px-3.5 py-2.5 rounded-xl border border-slate-200 text-xs focus:ring-2 focus:ring-[#0B4D3C] outline-none bg-white">
+                  <option value="RA">Unit RA (Raudhatul Athfal)</option>
+                  <option value="DTA">Unit DTA (Madrasah Diniyah)</option>
+                  <option value="Majelis Ta'lim">Majelis Ta'lim Mutiara Hati</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="p-4 rounded-2xl bg-slate-50 border border-slate-200/80 space-y-3">
+              <label class="block text-xs font-bold text-slate-700">Pilih File Foto Kegiatan:</label>
+              <input type="file" id="gallery-image-input" accept="image/*" class="text-xs text-slate-600 file:mr-3 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-xs file:font-bold file:bg-[#0B4D3C] file:text-white cursor-pointer">
+
+              <div class="flex items-center gap-2 text-[11px] text-emerald-800 bg-emerald-50/80 p-2 rounded-xl">
+                <i data-lucide="info" class="w-4 h-4 text-[#F59E0B] flex-shrink-0"></i>
+                <span>Gunakan foto <strong>Landscape (4:3)</strong> posisi tidur agar pas di grid galeri.</span>
+              </div>
+
+              <div id="gallery-preview-container" class="hidden pt-2">
+                <div class="relative w-44 aspect-[4/3] rounded-xl overflow-hidden border-2 border-emerald-300 shadow bg-slate-100">
+                  <img id="gallery-image-preview" src="" alt="Preview" class="w-full h-full object-cover">
+                  <div class="watermark-badge text-[9px] py-0.5 px-1.5 bottom-1.5 right-1.5">
+                    <span>Yayasan Mutiara Ilmu</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div>
+              <label class="block text-xs font-bold text-slate-700 mb-1">Atau Masukkan URL Gambar (Opsional)</label>
+              <input type="url" id="gallery-image-url" class="w-full px-3.5 py-2.5 rounded-xl border border-slate-200 text-xs focus:ring-2 focus:ring-[#0B4D3C] outline-none" placeholder="https://...">
+            </div>
+
+            <button type="submit" class="px-6 py-3 rounded-full bg-[#0B4D3C] hover:bg-[#062F24] text-white font-bold text-xs shadow transition flex items-center gap-2">
+              <i data-lucide="upload" class="w-4 h-4 text-[#FBBF24]"></i>
+              <span>Tambahkan ke Galeri</span>
+            </button>
+          </form>
+        </div>
+
+        <!-- Daftar Galeri -->
+        <div class="bg-white p-6 rounded-3xl border border-slate-200 shadow-xs">
+          <h3 class="font-bold text-sm text-[#0B4D3C] mb-4">Foto Dokumentasi di Galeri</h3>
+          <div id="admin-gallery-list" class="grid grid-cols-2 sm:grid-cols-3 gap-4">
+            <!-- Dynamic via admin.js -->
+          </div>
+        </div>
+
+      </section>
+
+      <!-- TAB 4: PANDUAN RASIO FOTO (SESUAI KEINGINAN USER) -->
+      <section id="tab-ratio-guide" class="admin-tab-pane hidden space-y-6">
+        
+        <div class="bg-white p-6 sm:p-8 rounded-3xl border border-slate-200 shadow-xs space-y-6">
+          <div>
+            <span class="text-[10px] font-bold text-[#F59E0B] uppercase tracking-wider bg-amber-50 px-2.5 py-1 rounded-full border border-amber-200">
+              Petunjuk Pengurus
+            </span>
+            <h3 class="text-xl font-bold text-[#0B4D3C] mt-2">
+              Panduan Rasio Foto Supaya Presisi & Anti-Gepeng
+            </h3>
+            <p class="text-xs text-slate-600 mt-1 leading-relaxed">
+              Anda tidak perlu pusing menghitung ukuran pixel. Cukup ikuti panduan bentuk foto berikut saat memotret dengan kamera HP:
+            </p>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            
+            <!-- Rasio 16:9 -->
+            <div class="p-5 rounded-2xl bg-slate-50 border border-slate-200 flex flex-col justify-between">
+              <div>
+                <div class="w-full aspect-[16/9] rounded-xl bg-emerald-900 text-white flex items-center justify-center font-bold text-sm mb-4 shadow-xs">
+                  Rasio 16 : 9 (Lebar)
+                </div>
+                <h4 class="font-bold text-sm text-slate-900">Landscape Lebar (16:9)</h4>
+                <p class="text-xs text-slate-500 mt-1">Seperti format layar video YouTube atau TV.</p>
+                <div class="mt-3 pt-3 border-t border-slate-200 text-xs text-[#0B4D3C]">
+                  <strong>Digunakan Untuk:</strong>
+                  <ul class="list-disc list-inside mt-1 text-slate-600">
+                    <li>Hero Banner Beranda</li>
+                    <li>Foto Gedung Utama</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <!-- Rasio 4:3 -->
+            <div class="p-5 rounded-2xl bg-emerald-50/60 border border-emerald-200 flex flex-col justify-between ring-2 ring-[#0B4D3C]/10">
+              <div>
+                <div class="w-full aspect-[4/3] rounded-xl bg-[#0B4D3C] text-white flex items-center justify-center font-bold text-sm mb-4 shadow-xs">
+                  Rasio 4 : 3 (Standar HP)
+                </div>
+                <h4 class="font-bold text-sm text-[#0B4D3C]">Landscape Standar (4:3)</h4>
+                <p class="text-xs text-slate-600 mt-1">Cukup ambil foto HP dalam posisi horizontal tidur biasa.</p>
+                <div class="mt-3 pt-3 border-t border-emerald-200 text-xs text-[#0B4D3C]">
+                  <strong>Paling Sering Digunakan:</strong>
+                  <ul class="list-disc list-inside mt-1 text-slate-600">
+                    <li>Dokumentasi Kegiatan</li>
+                    <li>Cerita Santri & Berita</li>
+                    <li>Prestasi & Piala Santri</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <!-- Rasio 1:1 -->
+            <div class="p-5 rounded-2xl bg-slate-50 border border-slate-200 flex flex-col justify-between">
+              <div>
+                <div class="w-full aspect-square rounded-xl bg-amber-500 text-slate-950 flex items-center justify-center font-bold text-sm mb-4 shadow-xs">
+                  Rasio 1 : 1 (Kotak)
+                </div>
+                <h4 class="font-bold text-sm text-slate-900">Persegi / Kotak (1:1)</h4>
+                <p class="text-xs text-slate-500 mt-1">Seperti format foto profil WhatsApp / Instagram.</p>
+                <div class="mt-3 pt-3 border-t border-slate-200 text-xs text-[#0B4D3C]">
+                  <strong>Digunakan Untuk:</strong>
+                  <ul class="list-disc list-inside mt-1 text-slate-600">
+                    <li>Foto Pengurus Yayasan</li>
+                    <li>Foto Ustadz & Pengajar Unit</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </section>
+
+      <!-- TAB 5: PENGATURAN KONTAK & REKENING -->
+      <section id="tab-settings" class="admin-tab-pane hidden space-y-6">
+        
+        <div class="bg-white p-6 sm:p-8 rounded-3xl border border-slate-200 shadow-xs">
+          <div class="mb-6 pb-4 border-b border-slate-100">
+            <h3 class="font-bold text-base text-[#0B4D3C]">Pengaturan WhatsApp & Donasi</h3>
+            <p class="text-xs text-slate-500 mt-0.5">Ubah nomor WhatsApp Ketua Yayasan atau nomor rekening tujuan infaq.</p>
+          </div>
+
+          <form id="settings-form" class="space-y-4 max-w-lg">
+            <div>
+              <label class="block text-xs font-bold text-slate-700 mb-1">Nomor WhatsApp Ketua Yayasan (Format: 628xxx)</label>
+              <input type="text" id="settings-wa" class="w-full px-3.5 py-2.5 rounded-xl border border-slate-200 text-xs font-mono focus:ring-2 focus:ring-[#0B4D3C] outline-none" value="6281234567890" required>
+              <p class="text-[11px] text-slate-400 mt-1">Diawali dengan 62 tanpa spasi atau tanda plus.</p>
+            </div>
+
+            <div>
+              <label class="block text-xs font-bold text-slate-700 mb-1">Nomor Rekening BSI Yayasan</label>
+              <input type="text" id="settings-bsi" class="w-full px-3.5 py-2.5 rounded-xl border border-slate-200 text-xs font-mono focus:ring-2 focus:ring-[#0B4D3C] outline-none" value="7123456789" required>
+            </div>
+
+            <button type="submit" class="px-6 py-2.5 rounded-full bg-[#0B4D3C] hover:bg-[#062F24] text-white font-bold text-xs shadow transition">
+              Simpan Pengaturan
+            </button>
+          </form>
+        </div>
+
+      </section>
+
+    </main>
+
+  </div>
+
+  <!-- SCRIPTS -->
+  <script src="admin.js"></script>
+  <script>
+    lucide.createIcons();
+  </script>
+</body>
+</html>
