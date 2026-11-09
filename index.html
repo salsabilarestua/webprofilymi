@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Yayasan Mutiara Ilmu — Beranda</title>
+  <!-- DUMMY: meta description — sesuaikan dengan profil resmi yayasan -->
+  <meta name="description" content="Yayasan Mutiara Ilmu — pusat pendidikan Islam dan dakwah: RA, DTA, dan Majelis Ta'lim.">
+  <meta name="theme-color" content="#00503b">
+  <link rel="icon" type="image/png" href="gambar/logo.png">
+
+  <!-- Font cadangan (dipakai bila file Fabrikat belum ada di folder /font) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS (CDN) — untuk produksi disarankan build dengan Tailwind CLI -->
+  <script src="https://cdn.tailwindcss.com/3.4.17"></script>
+
+  <link rel="stylesheet" href="css/font.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-base="" data-page="beranda">
+
+  <div id="app-header"></div>
+
+  <main>
+    <!-- ===================== HERO ===================== -->
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero__bg">
+        <!-- DUMMY: foto gedung (potongan dari desain, resolusi rendah) — ganti dengan foto asli ≥ 1920px -->
+        <img src="gambar/hero.jpg" alt="Gedung Yayasan Mutiara Ilmu" fetchpriority="high">
+      </div>
+      <div class="hero__content">
+        <div class="container-wide" style="padding-inline:0">
+          <h1 class="hero__title" id="hero-title">Yayasan Mutiara Ilmu</h1>
+          <!-- DUMMY: teks sambutan hero (desktop = lorem ipsum, mobile = copy dari desain mobile) -->
+          <p class="hero__text only-desktop">Yayasan Mutiara Ilmu adalah Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+          <p class="hero__text only-mobile">Pusat pendidikan Islam dan dakwah yang berfokus pada pembentukan generasi Qur'ani berakhlak mulia, berprestasi tinggi, cerdas, dan mandiri.</p>
+          <a href="pages/tentang.html" class="btn-accent">Selengkapnya
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== PROGRAM PENDIDIKAN ===================== -->
+    <section class="section section--first" id="program" aria-labelledby="program-title">
+      <div class="container-wide">
+        <div class="section-head" data-bg="Program">
+          <h2 class="section-title" id="program-title">Program Pendidikan</h2>
+        </div>
+
+        <!-- Desktop / tablet: kartu foto dengan efek hover (sesuai program-card.png) -->
+        <div class="program-grid only-desktop reveal">
+          <a class="program-card" href="pages/ra.html" aria-label="RA — Raudatul Athfal">
+            <!-- DUMMY: foto kartu program (ganti dengan foto asli tiap program) -->
+            <span class="program-card__img"><img src="gambar/kelas.jpg" alt="" loading="lazy"></span>
+            <span class="program-card__body">
+              <span class="program-card__code" style="display:block">RA</span>
+              <span class="program-card__name">Raudatul Athfal</span>
+              <!-- DUMMY: kalimat tambahan saat hover (class "extra") -->
+              <span class="program-card__desc">Pendidikan Anak Usia Dini<span class="extra"> Lorem ipsum dolor sit amet.</span></span>
+            </span>
+            <span class="program-card__cta">Selengkapnya
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </span>
+          </a>
+
+          <a class="program-card" href="pages/dta.html" aria-label="DTA — Diniyah Takmiliyah Awaliyah">
+            <span class="program-card__img"><img src="gambar/kelas.jpg" alt="" loading="lazy"></span>
+            <span class="program-card__body">
+              <span class="program-card__code" style="display:block">DTA</span>
+              <span class="program-card__name">Diniyah Takmiliyah Awaliyah</span>
+              <span class="program-card__desc">Pendidikan Sekolah Agama<span class="extra"> Lorem ipsum dolor sit amet.</span></span>
+            </span>
+            <span class="program-card__cta">Selengkapnya
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </span>
+          </a>
+
+          <a class="program-card" href="pages/majelis.html" aria-label="Majelis Ta'lim">
+            <span class="program-card__img"><img src="gambar/kelas.jpg" alt="" loading="lazy"></span>
+            <span class="program-card__body">
+              <span class="program-card__code" style="display:block">Majelis<br>Ta’lim</span>
+              <span class="program-card__desc">Pengajian<span class="extra"> Lorem ipsum dolor sit amet.</span></span>
+            </span>
+            <span class="program-card__cta">Selengkapnya
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </span>
+          </a>
+        </div>
+
+        <!-- Mobile: kartu horizontal dengan thumbnail -->
+        <div class="only-mobile" style="display:grid;gap:.9rem">
+          <!-- DUMMY: thumbnail & deskripsi program versi mobile -->
+          <a class="program-card--m" href="pages/ra.html">
+            <img src="gambar/thumb-ra.jpg" alt="Kegiatan belajar RA" width="80" height="80" loading="lazy">
+            <div>
+              <h3 class="t">RA</h3>
+              <p class="s">Raudatul Athfal</p>
+              <p class="d">Pendidikan Anak Usia Dini</p>
+              <span class="l">Lihat Kurikulum <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m9 6 6 6-6 6"/></svg></span>
+            </div>
+          </a>
+          <a class="program-card--m" href="pages/dta.html">
+            <img src="gambar/thumb-dta.jpg" alt="Kegiatan belajar DTA" width="80" height="80" loading="lazy">
+            <div>
+              <h3 class="t">DTA</h3>
+              <p class="s">Diniyah Takmiliyah Awaliyah</p>
+              <p class="d">Pendidikan Sekolah Agama</p>
+              <span class="l">Lihat Kurikulum <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m9 6 6 6-6 6"/></svg></span>
+            </div>
+          </a>
+          <a class="program-card--m" href="pages/majelis.html">
+            <img src="gambar/thumb-majelis.jpg" alt="Kegiatan Majelis Ta'lim" width="80" height="80" loading="lazy">
+            <div>
+              <h3 class="t">Majelis Ta'lim</h3>
+              <p class="s">Pengajian &amp; Pembinaan Umat</p>
+              <p class="d">Kajian Rutin &amp; Tadarus Al-Qur'an</p>
+              <span class="l">Jadwal Pengajian <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m9 6 6 6-6 6"/></svg></span>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== KEGIATAN ===================== -->
+    <section class="section" id="kegiatan" aria-labelledby="kegiatan-title">
+      <div class="container-wide">
+        <div class="section-head" data-bg="Kegiatan">
+          <h2 class="section-title" id="kegiatan-title">Kegiatan</h2>
+        </div>
+
+        <!-- DUMMY: 3 kegiatan terbaru (judul, tanggal, foto) — nanti diambil dari data/CMS -->
+        <div class="card-grid card-grid--3 reveal">
+          <a class="news-card" href="pages/detail-kegiatan.html">
+            <div class="news-card__img"><picture>
+              <source media="(max-width: 767px)" srcset="gambar/kegiatan-m-1.jpg">
+              <img src="gambar/kegiatan-1.jpg" alt="Setoran hafalan Juz 30 dan ujian tahsin DTA" loading="lazy"></picture></div>
+            <div class="news-card__body">
+              <p class="news-card__date">17/08/2026</p>
+              <h3 class="news-card__title">Setoran Hafalan Juz 30 &amp; Ujian Tahsin Berkala DTA</h3>
+            </div>
+          </a>
+          <a class="news-card" href="pages/detail-kegiatan.html">
+            <div class="news-card__img"><picture>
+              <source media="(max-width: 767px)" srcset="gambar/kegiatan-m-2.jpg">
+              <img src="gambar/kegiatan-2.jpg" alt="Kajian bulanan dan tadarus bersama ibu-ibu majelis ta'lim" loading="lazy"></picture></div>
+            <div class="news-card__body">
+              <p class="news-card__date">17/08/2026</p>
+              <h3 class="news-card__title">Kajian Bulanan &amp; Tadarus Bersama Ibu-ibu Majelis Ta'lim</h3>
+            </div>
+          </a>
+          <a class="news-card" href="pages/detail-kegiatan.html">
+            <div class="news-card__img"><picture>
+              <source media="(max-width: 767px)" srcset="gambar/kegiatan-m-3.jpg">
+              <img src="gambar/kegiatan-3.jpg" alt="Lomba mewarnai kaligrafi santri cilik RA" loading="lazy"></picture></div>
+            <div class="news-card__body">
+              <p class="news-card__date">13/02/2025</p>
+              <h3 class="news-card__title">Kegiatan Lomba Mewarnai Kaligrafi Santri Cilik RA</h3>
+            </div>
+          </a>
+        </div>
+
+        <div class="text-center" style="margin-top:2rem">
+          <a href="pages/kegiatan.html" class="btn-accent btn-accent--sm" style="font-size:var(--fs-btn)">Lihat semua
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== PRESTASI ===================== -->
+    <section class="section" id="prestasi" aria-labelledby="prestasi-title">
+      <div class="container-wide">
+        <div class="section-head" data-bg="Prestasi">
+          <h2 class="section-title" id="prestasi-title">Prestasi</h2>
+        </div>
+
+        <!-- DUMMY: 3 prestasi terbaru (judul, tanggal, foto) — pada desain desktop memakai foto yang sama dengan Kegiatan -->
+        <div class="card-grid card-grid--3 reveal">
+          <a class="news-card" href="pages/detail-prestasi.html">
+            <div class="news-card__img"><picture>
+              <source media="(max-width: 767px)" srcset="gambar/prestasi-m-1.jpg">
+              <img src="gambar/kegiatan-1.jpg" alt="Setoran hafalan Juz 30 dan ujian tahsin DTA" loading="lazy"></picture></div>
+            <div class="news-card__body">
+              <p class="news-card__date">17/08/2026</p>
+              <h3 class="news-card__title">Setoran Hafalan Juz 30 &amp; Ujian Tahsin Berkala DTA</h3>
+            </div>
+          </a>
+          <a class="news-card" href="pages/detail-prestasi.html">
+            <div class="news-card__img"><picture>
+              <source media="(max-width: 767px)" srcset="gambar/prestasi-m-2.jpg">
+              <img src="gambar/kegiatan-2.jpg" alt="Kajian bulanan dan tadarus bersama ibu-ibu majelis ta'lim" loading="lazy"></picture></div>
+            <div class="news-card__body">
+              <p class="news-card__date">17/08/2026</p>
+              <h3 class="news-card__title">Kajian Bulanan &amp; Tadarus Bersama Ibu-ibu Majelis Ta'lim</h3>
+            </div>
+          </a>
+          <a class="news-card" href="pages/detail-prestasi.html">
+            <div class="news-card__img"><picture>
+              <source media="(max-width: 767px)" srcset="gambar/prestasi-m-3.jpg">
+              <img src="gambar/kegiatan-3.jpg" alt="Lomba mewarnai kaligrafi santri cilik RA" loading="lazy"></picture></div>
+            <div class="news-card__body">
+              <p class="news-card__date">13/02/2025</p>
+              <h3 class="news-card__title">Kegiatan Lomba Mewarnai Kaligrafi Santri Cilik RA</h3>
+            </div>
+          </a>
+        </div>
+
+        <div class="text-center" style="margin-top:2rem">
+          <a href="pages/prestasi.html" class="btn-accent btn-accent--sm" style="font-size:var(--fs-btn)">Lihat semua
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div id="app-footer"></div>
+
+  <script src="js/components.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
