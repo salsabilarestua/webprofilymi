@@ -1,0 +1,6 @@
+@font-face {
+    font-family: 'HvDTrial Fabrikat Normal Medium';
+    font-style: normal;
+    font-weight: normal;
+    src: local('HvDTrial Fabrikat Normal Medium'), url('HvDTrial_FabrikatNormal-Medium-BF64b73f66ec71d.woff') format('woff');
+    }
