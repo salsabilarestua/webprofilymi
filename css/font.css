@@ -1,0 +1,39 @@
+/* ==========================================================================
+   Font: Fabrikat
+   Letakkan file font Anda di folder /font dengan nama berikut (woff2 + woff):
+     Fabrikat-Regular.woff2   (400)
+     Fabrikat-Medium.woff2    (500)
+     Fabrikat-Bold.woff2      (700)
+     Fabrikat-Black.woff2     (800)
+   Jika file belum ada, browser otomatis memakai fallback (Barlow → Inter → system-ui)
+   sesuai variabel --font-main di css/style.css.
+   ========================================================================== */
+
+@font-face {
+  font-family: 'Fabrikat';
+  src: local('Fabrikat Regular'), local('Fabrikat-Regular'),
+       url('../font/Fabrikat-Regular.woff2') format('woff2'),
+       url('../font/Fabrikat-Regular.woff') format('woff');
+  font-weight: 400; font-style: normal; font-display: swap;
+}
+@font-face {
+  font-family: 'Fabrikat';
+  src: local('Fabrikat Medium'), local('Fabrikat-Medium'),
+       url('../font/Fabrikat-Medium.woff2') format('woff2'),
+       url('../font/Fabrikat-Medium.woff') format('woff');
+  font-weight: 500; font-style: normal; font-display: swap;
+}
+@font-face {
+  font-family: 'Fabrikat';
+  src: local('Fabrikat Bold'), local('Fabrikat-Bold'),
+       url('../font/Fabrikat-Bold.woff2') format('woff2'),
+       url('../font/Fabrikat-Bold.woff') format('woff');
+  font-weight: 600 700; font-style: normal; font-display: swap;
+}
+@font-face {
+  font-family: 'Fabrikat';
+  src: local('Fabrikat Black'), local('Fabrikat-Black'),
+       url('../font/Fabrikat-Black.woff2') format('woff2'),
+       url('../font/Fabrikat-Black.woff') format('woff');
+  font-weight: 800 900; font-style: normal; font-display: swap;
+}

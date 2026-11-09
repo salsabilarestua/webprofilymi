@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Prestasi — Yayasan Mutiara Ilmu</title>
+  <!-- DUMMY: meta description — sesuaikan dengan konten resmi -->
+  <meta name="description" content="Prestasi — Yayasan Mutiara Ilmu">
+  <meta name="theme-color" content="#00503b">
+  <link rel="icon" type="image/png" href="../gambar/logo.png">
+
+  <!-- Font cadangan (dipakai bila file Fabrikat belum ada di folder /font) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS (CDN) — untuk produksi disarankan build dengan Tailwind CLI -->
+  <script src="https://cdn.tailwindcss.com/3.4.17"></script>
+
+  <link rel="stylesheet" href="../css/font.css">
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body data-base="../" data-page="prestasi">
+
+  <div id="app-header"></div>
+
+  <main>
+    <div class="container-x">
+      <div class="section-head section-head--page" data-bg="Prestasi">
+        <h1 class="section-title">Prestasi</h1>
+      </div>
+
+      <!-- Filter kategori (berfungsi lewat js/main.js) -->
+      <div class="text-center" style="margin-bottom:2.5rem">
+        <div class="filter-tabs" role="group" aria-label="Filter kategori">
+          <button class="filter-tab is-active" type="button" data-filter="semua" aria-pressed="true">Semua</button>
+          <button class="filter-tab" type="button" data-filter="ra" aria-pressed="false">RA (Raudatul Athfal)</button>
+          <button class="filter-tab" type="button" data-filter="dta" aria-pressed="false">DTA (Diniyah Takmiliyah Awaliyah)</button>
+          <button class="filter-tab" type="button" data-filter="majelis" aria-pressed="false">Majelis Ta'lim</button>
+        </div>
+      </div>
+
+      <!-- DUMMY: 6 item prestasi (judul, tanggal, foto, kategori) — kartu 3–6 berisi data yang sama -->
+      <div class="list-grid">
+        <a class="news-card reveal" href="detail-prestasi.html" data-kategori="dta">
+          <div class="news-card__img"><picture>
+            <source media="(max-width: 767px)" srcset="../gambar/prestasi-m-1.jpg">
+            <img src="../gambar/kegiatan-1.jpg" alt="Setoran Hafalan Juz 30 dan Ujian Tahsin Berkala DTA" loading="lazy"></picture></div>
+          <div class="news-card__body">
+            <p class="news-card__date">17/08/2026</p>
+            <h3 class="news-card__title">Setoran Hafalan Juz 30 &amp; Ujian Tahsin Berkala DTA</h3>
+          </div>
+        </a>
+        <a class="news-card reveal" href="detail-prestasi.html" data-kategori="majelis">
+          <div class="news-card__img"><picture>
+            <source media="(max-width: 767px)" srcset="../gambar/prestasi-m-2.jpg">
+            <img src="../gambar/kegiatan-2.jpg" alt="Kajian Bulanan dan Tadarus Bersama Ibu-ibu Majelis Ta'lim" loading="lazy"></picture></div>
+          <div class="news-card__body">
+            <p class="news-card__date">17/08/2026</p>
+            <h3 class="news-card__title">Kajian Bulanan &amp; Tadarus Bersama Ibu-ibu Majelis Ta'lim</h3>
+          </div>
+        </a>
+        <a class="news-card reveal" href="detail-prestasi.html" data-kategori="ra">
+          <div class="news-card__img"><picture>
+            <source media="(max-width: 767px)" srcset="../gambar/prestasi-m-3.jpg">
+            <img src="../gambar/kegiatan-3.jpg" alt="Kegiatan Lomba Mewarnai Kaligrafi Santri Cilik RA" loading="lazy"></picture></div>
+          <div class="news-card__body">
+            <p class="news-card__date">13/02/2025</p>
+            <h3 class="news-card__title">Kegiatan Lomba Mewarnai Kaligrafi Santri Cilik RA</h3>
+          </div>
+        </a>
+        <a class="news-card reveal" href="detail-prestasi.html" data-kategori="ra">
+          <div class="news-card__img"><picture>
+            <source media="(max-width: 767px)" srcset="../gambar/prestasi-m-3.jpg">
+            <img src="../gambar/kegiatan-3.jpg" alt="Kegiatan Lomba Mewarnai Kaligrafi Santri Cilik RA" loading="lazy"></picture></div>
+          <div class="news-card__body">
+            <p class="news-card__date">13/02/2025</p>
+            <h3 class="news-card__title">Kegiatan Lomba Mewarnai Kaligrafi Santri Cilik RA</h3>
+          </div>
+        </a>
+        <a class="news-card reveal" href="detail-prestasi.html" data-kategori="ra">
+          <div class="news-card__img"><picture>
+            <source media="(max-width: 767px)" srcset="../gambar/prestasi-m-3.jpg">
+            <img src="../gambar/kegiatan-3.jpg" alt="Kegiatan Lomba Mewarnai Kaligrafi Santri Cilik RA" loading="lazy"></picture></div>
+          <div class="news-card__body">
+            <p class="news-card__date">13/02/2025</p>
+            <h3 class="news-card__title">Kegiatan Lomba Mewarnai Kaligrafi Santri Cilik RA</h3>
+          </div>
+        </a>
+        <a class="news-card reveal" href="detail-prestasi.html" data-kategori="ra">
+          <div class="news-card__img"><picture>
+            <source media="(max-width: 767px)" srcset="../gambar/prestasi-m-3.jpg">
+            <img src="../gambar/kegiatan-3.jpg" alt="Kegiatan Lomba Mewarnai Kaligrafi Santri Cilik RA" loading="lazy"></picture></div>
+          <div class="news-card__body">
+            <p class="news-card__date">13/02/2025</p>
+            <h3 class="news-card__title">Kegiatan Lomba Mewarnai Kaligrafi Santri Cilik RA</h3>
+          </div>
+        </a>
+      </div>
+
+      <!-- DUMMY: pagination statis (20 halaman) — hubungkan ke data sebenarnya -->
+      <nav class="text-center" style="margin-top:2.5rem" aria-label="Halaman">
+        <div class="pagination">
+          <span class="is-prev" aria-disabled="true">&lt;</span>
+          <a class="is-current" href="#" aria-current="page">1</a>
+          <a href="#">2</a>
+          <span>…</span>
+          <a href="#">20</a>
+          <a class="is-next" href="#" aria-label="Berikutnya">&gt;</a>
+        </div>
+      </nav>
+    </div>
+  </main>
+
+  <div id="app-footer"></div>
+
+  <script src="../js/components.js"></script>
+  <script src="../js/main.js"></script>
+</body>
+</html>
